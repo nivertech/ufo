@@ -5,6 +5,8 @@
     <tr>
       <th>Day</th>
       <th>Time</th>
+      <th>State</th>
+      <th>City</th>
       <th>Summary</th>
       <th>&nbsp;</th>
     </tr>
@@ -13,8 +15,10 @@
     <tr ng-repeat="sighting in sightings">
       <td>{{ sighting.day }}</td>
       <td>{{ sighting.time }}</td>
-      <td>{{ sighting.summary }}</td>
-      <td><a href="{{ sighting.link }}">View Report</a></td>
+      <td>{{ sighting.state }}</td>
+      <td>{{ sighting.city }}</td>
+      <td>{{ sighting.summary | truncate:true:100:'...' }}</td>
+      <td><a href="{{ sighting.link }}">Full Report</a></td>
     </tr>
   </tbody>
 </table>
