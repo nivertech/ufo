@@ -1,21 +1,31 @@
 'use strict';
 
 app.factory('GeocodeService', function GeocodeService($http) {
-  var GOOGLE_API_KEY = 'AIzaSyCfTC87U-WVemY6oOpRXtORC2QgvQnm6gI';
-  var GEOCODE_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+  var WU_API_KEY = 'b41e625badcc567f';
 
-  function makeRequest(position){
+  function getAddress(position){
     var latitude = position.latitude;
     var longitude = position.longitude;
-    GEOCODE_ENDPOINT += latitude + ',' + longitude;
-    GEOCODE_ENDPOINT += '&sensor=false&key=' + GOOGLE_API_KEY;
 
-    return $http.get(GEOCODE_ENDPOINT);
+    var URL = 'http://api.wunderground.com/api/' + WU_API_KEY;
+    URL += '/geolookup/q/' + latitude + ',' + longitude + '.json?callback=JSON_CALLBACK';
+
+    return $http.jsonp(URL);
+  }
+
+  function setLocation(zip){
+    var URL = 'http://api.wunderground.com/api/' + WU_API_KEY;
+    URL +=  '/geolookup/q/' + zip + '.json?callback=JSON_CALLBACK';
+
+    return $http.jsonp(URL);
   }
 
   return {
     getAddress: function(position){
-      return makeRequest(position);
+      return getAddress(position);
+    },
+    setLocation: function(zip){
+      return setLocation(zip);
     }
   };
 });
