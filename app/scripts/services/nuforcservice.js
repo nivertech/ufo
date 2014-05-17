@@ -1,6 +1,27 @@
 'use strict';
 
 angular.module('ufoApp')
-  .service('Nuforcservice', function Nuforcservice() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .factory('NUFORCService', function NUFORCService($http) {
+
+    // NUFORC API Endpoint
+    //var NUFORC_ENDPOINT = 'http://nuforc-api.herokuapp.com/api/v1/';
+    var NUFORC_ENDPOINT = 'http://localhost:3000/api/v1/';
+
+    // make API request
+    function makeRequest(params){
+      var url = NUFORC_ENDPOINT;
+
+      params.forEach(function(element){
+        url += element + '/';
+      });
+
+      return $http.get(url);
+    }
+
+    return {
+      getSightings: function(params){
+        return makeRequest(params);
+      }
+    };
+
   });

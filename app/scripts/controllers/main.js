@@ -1,5 +1,7 @@
 'use strict';
 
-angular.module('ufoApp')
-  .controller('MainCtrl', function ($scope) {
-  });
+app.controller('MainCtrl', function ($scope, NUFORCService) {
+
+
+
+});

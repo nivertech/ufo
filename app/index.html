@@ -11,6 +11,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/src/loading-bar.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -23,7 +25,23 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#/" class="navbar-brand">UFO Sightings</a>
+
+            <ul class="nav navbar-nav">
+              <li><a href="#/history">Past Sightings</a></li>
+              <li><a href="#/location">Sightings Near You</a></li>
+              <li><a href="#/latest">This Month's Sightings</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="container" ng-view=""></div>
+    <div class="container">
+      <footer><p class="text-muted">All data acquired from the NUFORC.</p></footer>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -61,6 +79,10 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/angular-loading-bar/src/loading-bar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -69,6 +91,10 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/nuforcservice.js"></script>
         <script src="scripts/services/locationservice.js"></script>
+        <script src="scripts/controllers/history.js"></script>
+        <script src="scripts/controllers/location.js"></script>
+        <script src="scripts/services/geocodeservice.js"></script>
+        <script src="scripts/controllers/latest.js"></script>
         <!-- endbuild -->
 </body>
 </html>
