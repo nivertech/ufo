@@ -8,7 +8,6 @@ app.controller('LocationCtrl', function ($scope, LocationService, GeocodeService
 
     GeocodeService.getAddress(position.coords)
       .success(function(data){
-        console.log(data);
         var location = data.results[0].address_components;
         $scope.state = location[5].long_name;
         $scope.abbr = location[5].short_name;

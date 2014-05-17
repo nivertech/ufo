@@ -1,13 +1,24 @@
-<div class="well" ng-cloak>
-  <div class="pull-right">
+<div class="alert alert-info alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Hey!</strong> Sometimes the Google Geocode API doesn't load. Try refreshing.
+</div>
 
+<div class="row">
+  <div class="col-md-4">
+    <div class="well well-sm">
+      <strong>Position: </strong>{{ position.latitude }}, {{ position.longitude}}
+    </div>
   </div>
-
-  <div>
-    <strong>Position: </strong>{{ position.latitude }}, {{ position.longitude}}
+  <div class="col-md-4">
+    <div class="well well-sm">
+      <strong>Location:</strong> {{ city }}, {{ state }}
+    </div>
   </div>
-  <div>
-    <strong>Approximate Location:</strong> {{ city }}, {{ state }}
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon"><strong>Set Location</strong></span>
+      <input type="text" class="form-control" placeholder="enter zipcode" />
+    </div>
   </div>
 </div>
 
@@ -15,7 +26,9 @@
 <hr>
 <div class="panel panel-default" ng-repeat="sighting in sightings">
   <div class="panel-heading">
-    <span>TIME AND DATE BITCH</span>
+    <span>
+      {{ sighting.time + ' ' + sighting.month + '/' + sighting.day + '/' + sighting.year | amDateFormat:'dddd, MMMM Do YYYY, h:mm a' }}
+    </span>
     <a href="{{ sighting.link }}" class="report-link">Full Report</a>
   </div>
   <div class="panel-body">
