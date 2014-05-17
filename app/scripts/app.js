@@ -6,7 +6,8 @@ var app = angular.module('ufoApp', [
     'ngSanitize',
     'ngRoute',
     'ui.calendar',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angularMoment'
   ]);
 
 app.config(function ($routeProvider) {

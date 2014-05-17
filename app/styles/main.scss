@@ -2,15 +2,6 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap.min.css';
 
-.location-panel {
-  list-style: none;
-
-  li {
-
-    span {
-      font-size: 1.1em;
-      font-weight: bold;
-      border-bottom: 1px solid #eee;
-    }
-  }
+.report-link {
+  float: right;
 }

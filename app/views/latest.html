@@ -1,1 +1,20 @@
-<p>This is the latest view.</p>
+<h2>May 2014</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Summary</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="sighting in sightings">
+      <td>{{ sighting.day }}</td>
+      <td>{{ sighting.time }}</td>
+      <td>{{ sighting.summary }}</td>
+      <td><a href="{{ sighting.link }}">View Report</a></td>
+    </tr>
+  </tbody>
+</table>

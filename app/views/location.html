@@ -1,29 +1,23 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Location Information</h3>
+<div class="well" ng-cloak>
+  <div class="pull-right">
+
   </div>
-  <div class="panel-body">
 
-    <div class="row">
-      <div class="col-md-4">
-        <ul class="location-panel">
-          <li><span>GeoLocation</span></li>
-          <li><strong>Latitude:</strong> {{ position.latitude }}</li>
-          <li><strong>Longitude:</strong> {{ position.longitude }}</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="location-panel">
-          <li><span>Estimated Location</span></li>
-          <li><strong>State:</strong> {{ state }}</li>
-          <li><strong>City:</strong> {{ city }}</li>
-        </ul>
-      </div>
-
-    </div>
+  <div>
+    <strong>Position: </strong>{{ position.latitude }}, {{ position.longitude}}
+  </div>
+  <div>
+    <strong>Approximate Location:</strong> {{ city }}, {{ state }}
   </div>
 </div>
 
-<ul>
-  <li ng-repeat="sighting in sightings">{{ sighting.summary }}</li>
-</ul>
+<h2>Sightings <span class="label label-success">{{ sightings.length }}</span></h2>
+<hr>
+<div class="panel panel-default" ng-repeat="sighting in sightings">
+  <div class="panel-heading">
+    <a href="{{ sighting.link }}" class="report-link">View Report</a>
+  </div>
+  <div class="panel-body">
+    <p>{{ sighting.summary }}</p>
+  </div>
+</div>

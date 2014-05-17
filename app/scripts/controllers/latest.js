@@ -1,10 +1,16 @@
 'use strict';
 
-angular.module('ufoApp')
-  .controller('LatestCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+app.controller('LatestCtrl', function ($scope, NUFORCService) {
+
+  var params = ['latest'];
+
+  NUFORCService.getSightings(params)
+    .success(function(data){
+      $scope.sightings = data;
+    })
+    .error(function(data, status){
+      $scope.sightings = data || 'Error retrieving reported UFO sightings.';
+      $scope.status = status;
+    });
+
+});
