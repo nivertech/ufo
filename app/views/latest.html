@@ -17,7 +17,7 @@
       <td>{{ sighting.time }}</td>
       <td>{{ sighting.state }}</td>
       <td>{{ sighting.city }}</td>
-      <td>{{ sighting.summary | truncate:true:100:'...' }}</td>
+      <td>{{ sighting.summary | truncate:true:90:'...' }}</td>
       <td><a href="{{ sighting.link }}">Full Report</a></td>
     </tr>
   </tbody>
