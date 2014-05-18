@@ -1,5 +1,4 @@
-<h2>Past Sightings</h2>
+<h2>Past Sightings <span class="label label-success">{{ sightings.length }}</span></h2>
 
-<ul>
-  <li ng-repeat="sighting in sightings">{{ sighting.month | unique: 'month' }}</li>
-</ul>
+
+<h1 ng-repeat="sighting in sightings | unique:'month' | orderBy:'month' ">{{ sighting.month }}</h1>

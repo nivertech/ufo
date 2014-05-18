@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('HistoryCtrl', function ($scope, NUFORCService) {
-  var params = ['date', '2014'];
+  var params = ['date', '2013'];
 
   NUFORCService.getSightings(params)
     .success(function(data){
