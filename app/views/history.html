@@ -18,12 +18,12 @@
   </form>
 </div>
 
-<h2>Past Sightings <span class="label label-success">{{ sightings.length }}</span></h2>
+<h2>Sightings <span class="label label-success">{{ sightings.length }}</span></h2>
 <hr>
 <div class="panel panel-default" ng-repeat="sighting in sightings">
   <div class="panel-heading">
     <span>
-      {{ sighting.time + ' ' + sighting.month + '/' + sighting.day + '/' + sighting.year | amDateFormat:'dddd, MMMM Do YYYY, h:mm a' }}
+      {{ sighting.state ? sighting.city + ', ' + sighting.state : sighting.city }}
     </span>
     <a href="{{ sighting.link }}" class="report-link">Full Report</a>
   </div>
