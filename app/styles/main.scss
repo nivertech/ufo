@@ -1,9 +1,29 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
-@import 'bootstrap.min.css';
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .report-link {
   float: right;
+}
+
+.glyphicon {
+  margin-right: 5px;
+}
+
+.custom-input {
+  margin-right: 10px;
+  text-align: center;
+  width: 80px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #428bca;
+  }
 }
 
 .icon {
