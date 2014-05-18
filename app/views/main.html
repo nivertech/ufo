@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-3">
     <div class="icon">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
@@ -29,12 +29,47 @@
       </svg>
     </div>
   </div>
-  <div class="col-sm-3">
-    <ul>
+  <div class="col-sm-5">
+    <h2>Jonathan Foster</h2>
+    <span>Ruby on Rails, AngularJS, Twitter Bootstrap, GeoLocation</span>
+  </div>
+  <div class="col-sm-4">
+    <ul class="links">
       <li>Links</li>
-      <li><a href="">NUFORC Website</a></li>
-      <li><a href="">API Repo</a></li>
-      <li><a href="">Website Repo</a></li>
+      <li><a href="http://www.nuforc.org/">NUFORC Website</a></li>
+      <li><a href="https://github.com/fostertheweb/nuforc-api">API Repo</a></li>
+      <li><a href="https://github.com/fostertheweb/ufo">Website Repo</a></li>
     </ul>
   </div>
 </div>
+
+<hr>
+
+<div class="details">
+  <h3>What?</h3>
+  <p>Look up UFO sightings reported to the National UFO Reporting Center throught history, or view sightings near your location.</p>
+
+  <h3>How?</h3>
+  <p>I developed an <a href="https://github.com/fostertheweb/nuforc-api">API</a> in Ruby on Rails to scrape the NUFORC website and then return the sightings in JSON.</p>
+
+  <h3>API's Used</h3>
+  <ul>
+    <li>NUFORC API</li>
+    <li>WeatherUnderground Geolookup API</li>
+    <li>HTML5 GeoLocation API</li>
+  </ul>
+
+  <h3>HTML5 Technology</h3>
+  <p>In my location service, in <code>app/scripts/services/locationservice.js</code>, you'll see I am using the HTML5 GeoLocation API to obtain the user's location. I grab their latitude and longitude which I then feed into the WeatherUnderground Geolookup API. That returns a city and state which I then can use with my NUFORC API to look for reported sightings in that location.</p>
+
+  <h3>Extras</h3>
+  <p>I used <a href="https://angularjs.org/">AngularJS</a> to structure my application. Angular follows an MVC like pattern that breaks up different components of your application into modules. I wrote some custom services in Angular that follow the singleton pattern.</p>
+
+  <p>The custom services in <code>app/scripts/services</code>, filters in <code>app/scripts/filters</code>, and the controllers in <code>app/scripts/controllers</code> are the JavaScript I wrote. I got the filters and location service working with some help from <a href="http://stackoverflow.com/">Stack Overflow</a></p>
+
+  <h3>Design</h3>
+  <p>It is designed for desktop use, but since I am using <a href="http://getbootstrap.com/">Twitter Bootstrap</a> I could make some tweaks to make it more mobile friendly in the future.</p>
+
+  <p>I wanted to keep it very clean and simple so you can easily read the information that is presented. I thought about a dark theme because of the theme of the website, I thought it might fit, but I think dark text on light backgrounds is much more legible.</p>
+
+  <p>For the 'Past Sightings' page I was hoping to implement a calendar type view where you could enter a year then page through the months. It would show how many sightings were reported on each day in the calendar then you could click on a day to see more details. Unfortunately, I did not have enough time for this. Instead you can enter a specific date in history and view any sightings reported that day.</p>

@@ -39,7 +39,6 @@ app.controller('LocationCtrl', function ($scope, LocationService, GeocodeService
 
       GeocodeService.setLocation($scope.zip)
         .success(function(data){
-          console.log(data);
           $scope.latitude = data.location.lat;
           $scope.longitude = data.location.lon;
           $scope.state = data.location.state;

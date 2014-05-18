@@ -2,6 +2,25 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+body {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  color: #444;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+
+  li {
+
+
+    &:first-child {
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+  }
+}
+
 .report-link {
   float: right;
 }
@@ -28,13 +47,15 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 .icon {
   background-color: #59D968;
-  width: 128px;
+  width: 180px;
   height: 96px;
   border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
 }
 
 .icon svg {
   max-width: 100%;
+  border-radius: 4px;
 }
 
 footer {
