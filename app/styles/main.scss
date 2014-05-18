@@ -6,6 +6,17 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
   float: right;
 }
 
+.icon {
+  background-color: #59D968;
+  width: 128px;
+  height: 96px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.icon svg {
+  max-width: 100%;
+}
+
 footer {
   border-top: 1px solid #eee;
   margin-top: 20px;

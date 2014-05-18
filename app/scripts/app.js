@@ -5,7 +5,6 @@ var app = angular.module('ufoApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ui.calendar',
     'angular-loading-bar',
     'angularMoment'
   ]);

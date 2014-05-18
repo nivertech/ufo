@@ -4,7 +4,8 @@ angular.module('ufoApp')
   .factory('NUFORCService', function NUFORCService($http) {
 
     // NUFORC API Endpoint
-    var NUFORC_ENDPOINT = 'http://nuforc-api.jfproject.me/api/v1/';
+    //var NUFORC_ENDPOINT = 'http://nuforc-api.jfproject.me/api/v1/';
+    var NUFORC_ENDPOINT = 'http://localhost:3000/api/v1/';
 
     // make API request
     function makeRequest(params){

@@ -11,7 +11,6 @@
     "angular-cookies": "1.2.15",
     "angular-sanitize": "1.2.15",
     "angular-route": "1.2.15",
-    "angular-ui-calendar": "~0.8.1",
     "angular-loading-bar": "~0.4.2",
     "angular-moment": "~0.7.1"
   },
